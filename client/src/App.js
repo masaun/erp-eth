@@ -448,13 +448,13 @@ class App extends Component {
     let Project = {};
     let OrganizationToken = {};
     try {
+      Counter = require("../../build/contracts/Counter.json");
+      Wallet = require("../../build/contracts/Wallet.json");
+      Project = require("../../build/contracts/Propose.json");                      // Load ABI of contract of Propose
+      OrganizationToken = require("../../build/contracts/OrganizationToken.json");  // Load ABI of contract of OrganizationToken
       // Counter = require("../../contracts/Counter.sol");
       // Wallet = require("../../contracts/Wallet.sol");
       // Project = require("../../contracts/Propose.sol");
-      Counter = require("./contracts/Counter.json");
-      Wallet = require("./contracts/Wallet.json");
-      Project = require("./contracts/Propose.json");  // Load ABI of contract of Propose
-      OrganizationToken = require("./contracts/OrganizationToken.json");  // Load ABI of contract of OrganizationToken
     } catch (e) {
       console.log(e);
     }
