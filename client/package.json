@@ -18,8 +18,18 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "react:test": "react-app-rewired test",
+    "eject": "react-scripts eject",
+    "test": "truffle test/*",
+    "start-blank": "rm -rf client/src && cp -rf barebones/src client/",
+    "client": "cd client && npm run start",
+    "console": "truffle console --network development",
+    "push": "zos push --deploy-dependencies",
+    "session": "zos session --network development --expires 7200",
+    "create:Propose": "zos create Propose --init initialize --args 0",
+    "create:OrganizationToken": "zos create OrganizationToken --init --args 'OrganizationToken', 'OZT', 8 ,'1000000000000', '$USER'",
+    "migrate": "truffle migrate --reset --network development",
+    "migrate:kovan": "truffle migrate --reset --network kovan"
   },
   "eslintConfig": {
     "extends": "react-app"
