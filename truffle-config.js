@@ -1,9 +1,12 @@
 const path = require("path");
 require('dotenv').config();
-const mnemonic = process.env.MNENOMIC;
+const mnemonic = process.env.MNEMONIC;
+
 const HDWalletProvider = require("truffle-hdwallet-provider");
 // Create your own key for Production environments (https://infura.io/)
 const INFURA_ID = 'd6760e62b67f4937ba1ea2691046f06d';
+
+let skale = "http://157.230.148.184:8057"
 
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
@@ -15,6 +18,16 @@ module.exports = {
       //port: 8545,   // Ganache-CLI
       network_id: "*",
     },
+
+    skale: {
+      provider: function() {
+        return new HDWalletProvider(mnemonic, skale)
+      },
+      network_id: '*',
+      gasPrice: 0,
+      skipDryRun: true
+    },
+
     ropsten: {
       provider: function() {
         return new HDWalletProvider(mnemonic, 'https://ropsten.infura.io/v3/' + process.env.INFURA_API_KEY)
