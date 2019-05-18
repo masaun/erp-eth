@@ -125,6 +125,8 @@ class App extends Component {
 
     this.handleInputMintBy = this.handleInputMintBy.bind(this);
     this.handleInputMintToken = this.handleInputMintToken.bind(this);
+
+    this.sendWyre = this.sendWyre.bind(this);
   }
 
 
@@ -1053,7 +1055,7 @@ class App extends Component {
             <Heading.h2>Payroll (by using Wyre API)</Heading.h2>
 
             <div className={styles.widgets}>
-              <h3>途中</h3><br />
+              <h3>Amount of transfer payroll</h3><br />
               <Input type="text" value={this.state.valueOfBudgetStatus} onChange={this.handleInputBudgetStatus} />
 
               <Button onClick={this.sendWyre}>Transfer Payroll</Button>
