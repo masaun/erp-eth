@@ -45,32 +45,34 @@ contract OrganizationToken is ERC20, ERC20Detailed, ERC20Mintable, ERC20Burnable
 
         return true;
     }
+
+
+
+
+    // contracts/OrganizationToken.sol
+    // pragma solidity ^0.5.0;
+
+    // import "zos-lib/contracts/Initializable.sol";
+    // import "openzeppelin-eth/contracts/token/ERC20/IERC20.sol";
+    // import "openzeppelin-eth/contracts/drafts/ERC20Migrator.sol";
+    // import "openzeppelin-eth/contracts/token/ERC20/ERC20Mintable.sol";
+    // import "openzeppelin-eth/contracts/token/ERC20/ERC20Detailed.sol";
+
+
+    // contract OrganizationTokenSecond is Initializable, ERC20, ERC20Detailed {
+    //   function initialize(
+    //     string memory name, string memory symbol, uint8 decimals, uint256 initialSupply, address initialHolder
+    //   ) public initializer {
+    //     require(initialSupply > 0);
+    //     ERC20Detailed.initialize(name, symbol, decimals);
+    //     _mint(initialHolder, initialSupply);
+    //   }
+
+    //   function transferMany(address[] memory tos, uint256 value) public {
+    //     for (uint256 i = 0; i < tos.length; i++) {
+    //       _transfer(msg.sender, tos[i], value);
+    //     }
+    //   }
+    // }
     
 }
-
-
-
-
-
-// contracts/OrganizationToken.sol
-// pragma solidity ^0.5.0;
-
-// import "zos-lib/contracts/Initializable.sol";
-// import "openzeppelin-eth/contracts/token/ERC20/ERC20.sol";
-// import "openzeppelin-eth/contracts/token/ERC20/ERC20Detailed.sol";
-
-// contract OrganizationToken is Initializable, ERC20, ERC20Detailed {
-//   function initialize(
-//     string memory name, string memory symbol, uint8 decimals, uint256 initialSupply, address initialHolder
-//   ) public initializer {
-//     require(initialSupply > 0);
-//     ERC20Detailed.initialize(name, symbol, decimals);
-//     _mint(initialHolder, initialSupply);
-//   }
-
-//   function transferMany(address[] memory tos, uint256 value) public {
-//     for (uint256 i = 0; i < tos.length; i++) {
-//       _transfer(msg.sender, tos[i], value);
-//     }
-//   }
-// }

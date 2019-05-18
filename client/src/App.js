@@ -413,6 +413,28 @@ class App extends Component {
   }
 
 
+  ////// Transfer Payroll by using Wyre API
+  sendWyre = async () => {
+    const WyreClient = require('@wyre/api').WyreClient
+
+    let wyre = new WyreClient({
+        format: "json_numberstring",
+        apiKey: "AK-AAAAAAA-AAAAAAA-AAAAAAA-AAAAAAA",
+        secretKey: "SK-AAAAAAA-AAAAAAA-AAAAAAA-AAAAAAA"
+        // baseUrl: "https://api.testwyre.com" // todo uncomment this line to use the testwyre environment
+    });
+
+    wyre.get("/v2/account")
+        .then(account => {
+            console.log("I am Wyre account ", account.id);
+        },
+        err => {
+            console.log("Problems, cap'n: ", err);
+        });
+  }
+
+
+
   // send() {
   //   const { value } = this.state;
   //   this.setState({
@@ -1024,8 +1046,23 @@ class App extends Component {
               <h3>Remaining budget of this proposal</h3>
               <p>{ remaining_budget }</p>
             </div>
-
           </Card>
+
+
+          <Card width={'420px'} bg="primary">
+            <Heading.h2>Payroll (by using Wyre API)</Heading.h2>
+
+            <div className={styles.widgets}>
+              <h3>途中</h3><br />
+              <Input type="text" value={this.state.valueOfBudgetStatus} onChange={this.handleInputBudgetStatus} />
+
+              <Button onClick={this.sendWyre}>Transfer Payroll</Button>
+            </div>
+
+            <hr />
+          </Card>
+
+
         </div>
       )}
       </div>

@@ -1,0 +1,11 @@
+{
+  "zosversion": "2.2",
+  "name": "erp-eth",
+  "version": "0.1.0",
+  "contracts": {
+    "OrganizationTokenSecond": "OrganizationTokenSecond"
+  },
+  "dependencies": {
+    "openzeppelin-eth": "^2.1.3"
+  }
+}
