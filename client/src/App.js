@@ -14,7 +14,8 @@ import { zeppelinSolidityHotLoaderOptions } from '../config/webpack';
 
 import styles from './App.module.scss';
 
-require('dotenv').config();
+import dotenv from 'dotenv';
+//require('dotenv').config();
 
 
 class App extends Component {
@@ -130,6 +131,8 @@ class App extends Component {
     this.handleInputMintToken = this.handleInputMintToken.bind(this);
 
     this.sendWyre = this.sendWyre.bind(this);
+
+    this.sendExchangeByAirSwap = this.sendExchangeByAirSwap.bind(this);
   }
 
 
@@ -436,6 +439,12 @@ class App extends Component {
         err => {
             console.log("Problems, cap'n: ", err);
         });
+  }
+
+
+  ////// Exchange token by AirSwap
+  sendExchangeByAirSwap = async () => {
+      // in progress
   }
 
 
@@ -1053,6 +1062,23 @@ class App extends Component {
             </div>
           </Card>
 
+          <Card width={'420px'} bg="primary">
+            <Heading.h2>Swap Payroll  (by using AirSwap API)</Heading.h2>
+
+            <div className={styles.widgets}>
+              <h3>Amount of Organaization Token</h3><br />
+              <Input type="text" value={this.state.valueOfBudgetStatus} onChange={this.handleInputBudgetStatus} />
+
+
+              <h3>Amount of DAI or ETH</h3><br />
+              <Input type="text" value={this.state.valueOfBudgetStatus} onChange={this.handleInputBudgetStatus} />              
+
+              <Button onClick={this.sendExchangeByAirSwap}>Exchange Token</Button>
+            </div>
+
+            <hr />
+          </Card>
+
 
           <Card width={'420px'} bg="primary">
             <Heading.h2>Payroll (by using Wyre API)</Heading.h2>
@@ -1066,7 +1092,6 @@ class App extends Component {
 
             <hr />
           </Card>
-
 
         </div>
       )}
