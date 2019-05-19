@@ -17,6 +17,8 @@ import styles from './App.module.scss';
 import dotenv from 'dotenv';
 //require('dotenv').config();
 
+import * as swapSimple from 'airswap.js/src/swap'   // AirSwap
+
 
 class App extends Component {
   // state = {
@@ -447,18 +449,17 @@ class App extends Component {
 
   ////// Exchange token by AirSwap
   sendExchangeByAirSwap = async () => {
-      // in progress
-      AirSwap.Transfer.render({
-        mode: 'buy',
-        amount: '10000',
-        token: '0x0...',
-        onCancel: function() {
-          console.info('Trade was canceled.');
-        },
-        onComplete: function(transactionId) {
-          console.info('Trade complete, Thank you, come again.');
-        }
-      }, 'body');
+    // AirSwap.Transfer.render({  // [Error]： 'AirSwap' is not defined
+    //   mode: 'buy',
+    //   amount: '10000',
+    //   token: '0x0...',
+    //   onCancel: function() {
+    //     console.info('Trade was canceled.');
+    //   },
+    //   onComplete: function(transactionId) {
+    //     console.info('Trade complete, Thank you, come again.');
+    //   }
+    // }, 'body');
   }
 
 

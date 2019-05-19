@@ -33,6 +33,7 @@
   "homepage": "https://github.com/rrecuero/zepkit#readme",
   "dependencies": {
     "@wyre/api": "^1.0.5",
+    "airswap.js": "0.0.10",
     "dotenv": "^7.0.0",
     "openzeppelin-eth": "^2.1.3",
     "truffle-hdwallet-provider": "^1.0.3",
