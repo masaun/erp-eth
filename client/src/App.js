@@ -427,8 +427,11 @@ class App extends Component {
 
     let wyre = new WyreClient({
         format: "json_numberstring",
-        apiKey: process.env.API_KEY,
-        secretKey: process.env.SECRET_KEY
+        apiKey: "AK-33TVEPQT-TC2DHVY7-CN7F6QDT-8ADTBF22",
+        //apiKey: process.env.API_KEY,
+        secretKey: "SK-YX47CABT-8WJHQ4RX-VV84JX9J-4JJFXNUZ",
+        //secretKey: process.env.SECRET_KEY
+        
         // baseUrl: "https://api.testwyre.com" // todo uncomment this line to use the testwyre environment
     });
 
@@ -445,6 +448,17 @@ class App extends Component {
   ////// Exchange token by AirSwap
   sendExchangeByAirSwap = async () => {
       // in progress
+      AirSwap.Transfer.render({
+        mode: 'buy',
+        amount: '10000',
+        token: '0x0...',
+        onCancel: function() {
+          console.info('Trade was canceled.');
+        },
+        onComplete: function(transactionId) {
+          console.info('Trade complete, Thank you, come again.');
+        }
+      }, 'body');
   }
 
 
@@ -1073,7 +1087,7 @@ class App extends Component {
               <h3>Amount of DAI or ETH</h3><br />
               <Input type="text" value={this.state.valueOfBudgetStatus} onChange={this.handleInputBudgetStatus} />              
 
-              <Button onClick={this.sendExchangeByAirSwap}>Exchange Token</Button>
+              <Button onClick={this.sendExchangeByAirSwap}>Swap Token</Button>
             </div>
 
             <hr />
