@@ -14,6 +14,9 @@ import { zeppelinSolidityHotLoaderOptions } from '../config/webpack';
 
 import styles from './App.module.scss';
 
+require('dotenv').config();
+
+
 class App extends Component {
   // state = {
   //   storageValue: 0,
@@ -421,8 +424,8 @@ class App extends Component {
 
     let wyre = new WyreClient({
         format: "json_numberstring",
-        apiKey: "AK-AAAAAAA-AAAAAAA-AAAAAAA-AAAAAAA",
-        secretKey: "SK-AAAAAAA-AAAAAAA-AAAAAAA-AAAAAAA"
+        apiKey: process.env.API_KEY,
+        secretKey: process.env.SECRET_KEY
         // baseUrl: "https://api.testwyre.com" // todo uncomment this line to use the testwyre environment
     });
 
